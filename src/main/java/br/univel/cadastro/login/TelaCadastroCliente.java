@@ -11,7 +11,7 @@ public class TelaCadastroCliente extends MolduraAbstrata {
 	 * Configura o MioloCadastroCliente e o DAOCLiente na mesma classe
 	 */
 	public TelaCadastroCliente() {
-
+		super();
 	}
 
 	@Override

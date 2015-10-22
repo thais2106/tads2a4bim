@@ -50,8 +50,9 @@ public class TelaLogin extends JFrame {
 		JMenuItem mntmCliente = new JMenuItem("Cliente");
 		mntmCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				tabbedPane.addTab("Cadastro de Cliente", new TelaCadastroCliente());
+				abrirTela();
 			}
+
 		});
 		mnCadastro.add(mntmCliente);
 		contentPane = new JPanel();
@@ -61,6 +62,13 @@ public class TelaLogin extends JFrame {
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
+	}
+
+	protected void abrirTela() {
+		TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+		telaCadastroCliente.setCloseAction(e -> tabbedPane.remove(telaCadastroCliente));
+		tabbedPane.addTab("Cadastro de Cliente", telaCadastroCliente);
+		
 	}
 
 }
